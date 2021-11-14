@@ -1,3 +1,6 @@
+//###############################################
+//############### this is BACKEND ###############
+//###############################################
 const express = require("express");
 const bodyParser = require("body-parser");
 const fs = require("fs");
@@ -13,7 +16,7 @@ app.set("port", process.env.PORT || 9876);
 
 /* ####### REQUEST / */
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "/views/index.html"));
+    res.sendFile(path.join(__dirname, "/views/index.html")); //########## a backend =>> vissza a feladónak sora
 });
 
 /* ####### REQUEST /ROUTING GET */
@@ -23,7 +26,7 @@ app.get("/person", (req, res) => {
         const collection = client.db("post-test").collection("test");
         const person = await collection.find().toArray();
         client.close();
-        res.send(person);
+        res.send(person); //############################################# a backend =>> vissza a feladónak sora
     });
 });
 
@@ -40,12 +43,12 @@ app.post("/person", bodyParser.json(), (req, res) => {
         const collection = client.db("post-test").collection("test");
         const result = await collection.insertOne(newPerson);
         if (result.insertedCount) {
-            res.send({ error: "nem lehet insertálni, azaz creálni" });
+            res.send({ error: "nem lehet insertálni, azaz creálni" }); // a backend =>> vissza a feladónak sora
             console.log(result.insertedCount);
             return;
         }
     });
-    res.send(newPerson);
+    res.send(newPerson); //############################################## a backend =>> vissza a feladónak sora
     client.close();
 });
 
