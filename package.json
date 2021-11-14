@@ -1,0 +1,16 @@
+{
+  "name": "mongodb-atlas-get-post-test",
+  "version": "1.0.0",
+  "description": "MongoDB GET POST",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "photovegh",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.12"
+  }
+}
