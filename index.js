@@ -56,7 +56,7 @@ app.post("/person", bodyParser.json(), (req, res) => {
 function getClient() {
     const { MongoClient } = require("mongodb");
     const uri =
-        "mongodb+srv://photovegh:Sususoft_0913@cluster0.gfjvb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+        "mongodb+srv:*******connection string*******@cluster0.gfjvb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"; //########### Atlas connection str
     return new MongoClient(uri, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
